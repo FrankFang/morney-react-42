@@ -29,7 +29,6 @@ type Props = {
 }
 const TagsSection: React.FC<Props> = (props) => {
   const {tags, addTag} = useTags();
-  console.log('use tags')
   const selectedTagIds = props.value;
   const onToggleTag = (tagId: number) => {
     const index = selectedTagIds.indexOf(tagId);
@@ -51,11 +50,7 @@ const TagsSection: React.FC<Props> = (props) => {
           >{tag.name}</li>
         )}
       </ol>
-      <button onClick={() => {
-        console.log('2');
-        addTag();
-      }}>新增标签2
-      </button>
+      <button onClick={addTag}>新增标签</button>
     </Wrapper>
   );
 };

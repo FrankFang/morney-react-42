@@ -22,7 +22,6 @@ const defaultFormData = {
 };
 
 function Money() {
-  console.log('Money 执行了');
   const [selected, setSelected] = useState(defaultFormData);
   const {records, addRecord} = useRecords();
   const onChange = (obj: Partial<typeof selected>) => {
@@ -35,8 +34,6 @@ function Money() {
   };
   return (
     <MyLayout>
-      {JSON.stringify(selected)}
-      <hr/>
       <TagsSection value={selected.tagIds}
         onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}
